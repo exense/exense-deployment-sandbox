@@ -3,7 +3,7 @@
   
  	<groupId>ch.exense.deployment</groupId>
  	<artifactId>sandbox-parent</artifactId>
- 	<version>1.0.1-SNAPSHOT</version>
+ 	<version>1.0.1</version>
  	<name>sandbox-parent</name>
  	<packaging>pom</packaging>
   
