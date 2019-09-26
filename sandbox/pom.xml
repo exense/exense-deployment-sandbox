@@ -1,0 +1,99 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ch.exense.deployment</groupId>
+	<artifactId>sandbox</artifactId>
+
+	<version>0.6.1-SNAPSHOT</version>
+
+	<packaging>jar</packaging>
+
+	<name>Sandbox</name>
+	<description>
+		This is exense's deployment sandbox for testing Sonatype deployment processes.
+	</description>
+	<url>http://exense.ch/</url>
+	<licenses>
+		<license>
+			<name>The GNU Affero General Public License 3.0</name>
+			<url>http://www.gnu.org/licenses/</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Jerome Comte</name>
+			<email>jerome.comte@exense.ch</email>
+			<organization>Exense</organization>
+			<organizationUrl>http://exense.ch</organizationUrl>
+			<url>http://step.exense.ch/</url>
+		</developer>
+		<developer>
+			<name>Dorian Cransac</name>
+			<email>dorian.cransac@exense.ch</email>
+			<organization>Exense</organization>
+			<organizationUrl>http://exense.ch</organizationUrl>
+			<url>http://step.exense.ch/</url>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:https://github.com/exense/exense-deployment-sandbox.git</connection>
+		<developerConnection>scm:git:[push=]https://github.com/exense/exense-deployment-sandbox.git[fetch=]https://github.com/exense/exense-deployment-sandbox.git</developerConnection>
+		<url>https://github.com/exense/exense-deployment-sandbox.git/</url>
+	</scm>
+	
+<!-- 	<properties> -->
+<!-- 		<major>0.3</major> -->
+<!-- 		<minor>0</minor> -->
+<!-- 		<snapshot>-${maven.build.timestamp}-SNAPSHOT</snapshot> -->
+<!-- 		<maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format> -->
+<!-- 		<timestamp>1</timestamp> -->
+<!-- 	</properties> -->
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus-exense</id>
+			<url>https://nexus-enterprise.exense.ch/repository/exense/</url>
+		</snapshotRepository>
+		<repository>
+			<!-- <id>ossrh</id> -->
+			<id>nexus-exense</id>
+			<url>https://nexus-enterprise.exense.ch/repository/exense/</url>
+			<!-- <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url> -->
+		</repository>
+	</distributionManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.11.2</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
