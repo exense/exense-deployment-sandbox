@@ -1,0 +1,36 @@
+{
+	"NAME": "Test - Private",
+	"OS": "WINDOWS",
+	"GIT": "ssh://bitbucket.org/exenseteam/exense-private-deployment-sandbox.git",
+	"ROOT_FOLDER": "exense-private-deployment-sandbox/",
+	"SUBPROJECTS":
+	{
+		"TYPE":
+		["POM", "NPM", "SLN"],
+		"FOLDER":
+		["sandbox-parent/", "sandbox_nodejs/step-node-agent/"],
+		
+		"URL_SNAPSHOT":
+		[ 
+			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/", 
+			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/"
+		],
+		"URL_QA":
+		[ 
+			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/", 
+			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/"
+		],
+		"URL_PROD":
+		[ 
+			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/", 
+			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/"
+		],
+		
+		"CONFIG_SNAPSHOT":
+		[ "Debug", ""],
+		"CONFIG_QA":
+		[ "Debug", ""],
+		"CONFIG_PROD":
+		[ "Release", ""],
+	}
+}
