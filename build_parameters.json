@@ -1,8 +1,8 @@
 {
-	"NAME": "Test - Private",
-	"OS": "WINDOWS",
-	"GIT": "ssh://bitbucket.org/exenseteam/exense-private-deployment-sandbox.git",
-	"ROOT_FOLDER": "exense-private-deployment-sandbox/",
+	"NAME": "Test - Public",
+	"OS": "LINUX",
+	"GIT": "https://github.com/exense/exense-deployment-sandbox.git",
+	"ROOT_FOLDER": "exense-deployment-sandbox/",
 	"SUBPROJECTS":
 	{
 		"TYPE":
