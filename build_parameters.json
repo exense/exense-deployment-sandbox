@@ -38,9 +38,9 @@
 	},
 	"DOCKER":
 	{
-		"URL_SNAPSHOT": "docker",
-		"URL_QA": "",
-		"URL_PROD": "",
+		"URL_SNAPSHOT": "docker.exense.ch",
+		"URL_QA": "docker.exense.ch",
+		"URL_PROD": "docker.exense.ch",
 		"IMAGES":
 		{ 
 			"OS":["WINDOWS","LINUX"],
