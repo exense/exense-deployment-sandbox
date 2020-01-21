@@ -10,18 +10,18 @@
 		["sandbox-parent/", "sandbox_nodejs/step-node-agent/"],
 		
 		"URL_SNAPSHOT":
-		[ 
-			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/", 
+		[
+			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/",
 			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/"
 		],
 		"URL_QA":
-		[ 
-			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/", 
+		[
+			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/",
 			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/"
 		],
 		"URL_PROD":
 		[ 
-			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/", 
+			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/",
 			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/"
 		],
 		
@@ -32,19 +32,21 @@
 		"CONFIG_PROD":
 		[ "Release", ""],
 	},
-	"FTP": 
+	"FTP":
 	{
 		"ARTIFACT": []
 	},
 	"DOCKER":
 	{
-		"URL_SNAPSHOT": "docker.exense.ch",
-		"URL_QA": "docker.exense.ch",
-		"URL_PROD": "docker.exense.ch",
+		"URL_SNAPSHOT": "docker-dev.exense.ch",
+		"URL_QA": "docker-dev.exense.ch",
+		"URL_PROD": "docker-dev.exense.ch",
 		"IMAGES":
-		{ 
+		{
 			"OS":["WINDOWS","LINUX"],
-			"DOCKERFILE":["TEST1","TEST2"]
+			"DOCKERFILE":["test-dockerfile","test-dockerfile"],
+			"ZIP":["step-controller-${VERSION}.zip","step-controller-${VERSION}.zip"],
+			"REF_FOLDER":["step-controller/","step-controller/"]
 		}
 	}
 }
