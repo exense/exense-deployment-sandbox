@@ -1,12 +1,11 @@
 {
 	"NAME": "Test - Public",
-	"OS": "LINUX",
-	"GIT": "https://github.com/exense/exense-deployment-sandbox.git",
-	"ROOT_FOLDER": "exense-deployment-sandbox/",
+	
 	"SUBPROJECTS":
 	{
 		"TYPE":
 		["POM", "NPM", "SLN"],
+		
 		"FOLDER":
 		["sandbox-parent/", "sandbox_nodejs/step-node-agent/"],
 		
@@ -32,5 +31,20 @@
 		[ "Debug", ""],
 		"CONFIG_PROD":
 		[ "Release", ""],
+	},
+	"FTP": 
+	{
+		"ARTIFACT": []
+	},
+	"DOCKER":
+	{
+		"URL_SNAPSHOT": "docker",
+		"URL_QA": "",
+		"URL_PROD": "",
+		"IMAGES":
+		{ 
+			"OS":["WINDOWS","LINUX"],
+			"DOCKERFILE":["TEST1","TEST2"]
+		}
 	}
 }
