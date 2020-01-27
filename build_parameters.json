@@ -5,30 +5,36 @@
 	"SUBPROJECTS":
 	{
 		"TYPE":
-		["POM"],
+		["POM", "NPM", "SLN"],
 		
 		"FOLDER":
-		["sandbox-parent/"],
+		["sandbox-parent/", "sandbox_nodejs/step-node-agent/", "sandbox_net/sandbox/"],
 		
 		"URL_STAGING":
 		[
-			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/"
+			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/",
+			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/",
+			"https://nexus-enterprise.exense.ch/repository/test-build-nuget/"
 		],
 		"URL_QA":
 		[
-			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/"
+			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/",
+			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/",
+			"https://nexus-enterprise.exense.ch/repository/test-build-nuget/"
 		],
 		"URL_PROD":
-		[ 
-			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/"
+		[
+			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/",
+			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/",
+			"https://nexus-enterprise.exense.ch/repository/test-build-nuget/"
 		],
 		
 		"CONFIG_STAGING":
-		[ "Debug"],
+		[ "Debug", "", "Debug" ],
 		"CONFIG_QA":
-		[ "Debug"],
+		[ "Debug", "", "Debug" ],
 		"CONFIG_PROD":
-		[ "Release"],
+		[ "Release", "", "Release" ],
 	},
 	"DISTRIBUTIONS":
 	{
