@@ -68,5 +68,11 @@
       <Compile Include="Properties\Version.cs" />
     </ItemGroup>
   </Target>
+  <Target Name="pack">
+    <Message Text="Nothing to be done"></Message>
+  </Target>
+  <Target Name="Publish">
+    <Message Text="Nothing to be done"></Message>
+  </Target>
   <Target Name="Test"/>
  </Project>
