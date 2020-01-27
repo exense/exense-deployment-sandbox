@@ -85,6 +85,6 @@
     </ItemGroup>
   </Target>
   <Target Name="Test">
-    <Exec Command="nunit3-console.exe $(OutputPath)\$(PackageId).dll " />
+    <Exec Command="nunit3-console $(OutputPath)\$(PackageId).dll " />
   </Target>
 </Project>
