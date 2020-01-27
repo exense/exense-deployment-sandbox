@@ -23,6 +23,7 @@
     <DeployOnBuild>true</DeployOnBuild>
     <DeployTarget>Package</DeployTarget>
     <PackageAsSingleFile>true</PackageAsSingleFile>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
