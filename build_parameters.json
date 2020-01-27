@@ -13,17 +13,20 @@
 		"URL_SNAPSHOT":
 		[
 			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/",
-			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/"
+			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/",
+			"https://nexus-enterprise.exense.ch/repository/test-build-nuget/"
 		],
 		"URL_QA":
 		[
 			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/",
-			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/"
+			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/",
+			"https://nexus-enterprise.exense.ch/repository/test-build-nuget/"
 		],
 		"URL_PROD":
 		[ 
 			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/",
-			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/"
+			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/",
+			"https://nexus-enterprise.exense.ch/repository/test-build-nuget/"
 		],
 		
 		"CONFIG_STAGING":
