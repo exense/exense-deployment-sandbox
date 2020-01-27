@@ -10,7 +10,7 @@
 		"FOLDER":
 		["sandbox-parent/"],
 		
-		"URL_SNAPSHOT":
+		"URL_STAGING":
 		[
 			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/"
 		],
