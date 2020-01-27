@@ -1,5 +1,6 @@
 {
 	"NAME": "Test - Public",
+	"OS": "WINDOWS",
 	
 	"SUBPROJECTS":
 	{
@@ -32,21 +33,6 @@
 		"CONFIG_PROD":
 		[ "Release", ""],
 	},
-	"FTP":
-	{
-		"ARTIFACT": []
-	},
-	"DOCKER":
-	{
-		"URL_SNAPSHOT": "docker-dev.exense.ch",
-		"URL_QA": "docker-dev.exense.ch",
-		"URL_PROD": "docker-dev.exense.ch",
-		"IMAGES":
-		{
-			"OS":["WINDOWS","LINUX"],
-			"DOCKERFILE":["test-dockerfile","test-dockerfile"],
-			"ZIP":["step-controller-${VERSION}.zip","step-controller-${VERSION}.zip"],
-			"REF_FOLDER":["step-controller/","step-controller/"]
-		}
-	}
+	"DISTRIBUTIONS":
+	{}
 }
