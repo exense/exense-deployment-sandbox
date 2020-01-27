@@ -8,7 +8,7 @@
 		["POM", "NPM", "SLN"],
 		
 		"FOLDER":
-		["sandbox-parent/", "sandbox_nodejs/step-node-agent/"],
+		["sandbox-parent/", "sandbox_nodejs/step-node-agent/", "sandbox_net/sandbox/"],
 		
 		"URL_SNAPSHOT":
 		[
@@ -30,11 +30,11 @@
 		],
 		
 		"CONFIG_STAGING":
-		[ "Debug", ""],
+		[ "Debug", "", "Debug" ],
 		"CONFIG_QA":
-		[ "Debug", ""],
+		[ "Debug", "", "Debug" ],
 		"CONFIG_PROD":
-		[ "Release", ""],
+		[ "Release", "", "Release" ],
 	},
 	"DISTRIBUTIONS":
 	{}
