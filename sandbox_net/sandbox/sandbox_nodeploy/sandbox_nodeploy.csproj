@@ -68,4 +68,5 @@
       <Compile Include="Properties\Version.cs" />
     </ItemGroup>
   </Target>
+  <Target Name="Test"/>
  </Project>

@@ -84,4 +84,7 @@
       <Compile Include="Properties\Version.cs" />
     </ItemGroup>
   </Target>
+  <Target Name="Test">
+    <Exec Command="nunit3-console.exe $(OutputPath)\$(PackageId).dll " />
+  </Target>
 </Project>
