@@ -31,5 +31,26 @@
 		[ "Release"],
 	},
 	"DISTRIBUTIONS":
-	{}
+	{
+		"TYPE":
+		[],
+		
+		"ORIGIN_FILE":
+		[],
+		"DESTINATION_NAME":
+		[],
+		
+		"URL_STAGING":
+		[],
+		
+		"URL_QA":
+		[],
+		
+		"URL_PROD":
+		[],
+		
+		"OS":[],
+		
+		"CONFIG":[]
+	}
 }
