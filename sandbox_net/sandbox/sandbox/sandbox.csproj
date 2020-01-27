@@ -15,7 +15,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>sandbox</PackageId>
-    <Version>0.0.1-beta</Version>
     <Authors>Exense team</Authors>
     <Company>Exense</Company>
     <IsPackable>true</IsPackable>
@@ -78,7 +77,7 @@
     <Message Text="Writing to AssemblyInfo files">
     </Message>
     <ItemGroup>
-      <AssemblyAttributes Include="AssemblyVersion">
+      <AssemblyAttributes Include="AssemblyInformationalVersionAttribute">
         <_Parameter1>$(VERSION)</_Parameter1>
       </AssemblyAttributes>
     </ItemGroup>
