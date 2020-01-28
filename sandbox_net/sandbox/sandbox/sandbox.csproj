@@ -87,6 +87,10 @@
       <Compile Include="Properties\Version.cs" />
     </ItemGroup>
   </Target>
+  <Target Name="Publish">
+    <CallTarget Targets="CreateZip" />
+    <Exec WorkingDirectory="$(PackageOutputPath)" Command="nuget.exe push &quot;$(AssemblyName).$(VERSION).nupkg&quot; -Source $(NEXUS_URL)" />
+  </Target>
   <Target Name="Test">
     <Exec Command="nunit3-console $(OutputPath)\$(PackageId).dll " />
   </Target>
