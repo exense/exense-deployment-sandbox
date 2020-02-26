@@ -44,7 +44,7 @@
 		"URL_STAGING":  ["build@ftps.exense.ch","NONE"],
 		"URL_PROD":     [
       "build@ftps.exense.ch",
-      "https://uploads.github.com/repos/exense/djigger/releases/v${VERSION}/assets?name=${DESTINATION_NAME}"
+      "https://uploads.github.com/repos/exense/exense-deployment-sandbox/releases/v${VERSION}/assets?name=${DESTINATION_NAME}"
     ],
 		
 		"OS":["NOT_USED","NOT_USED"],
