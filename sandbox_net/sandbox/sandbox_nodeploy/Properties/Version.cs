@@ -7,4 +7,5 @@
 using System;
 using System.Reflection;
 
-[assembly: AssemblyVersion("1.2.3-test.0")]
+[assembly: AssemblyInformationalVersionAttribute("1.2.3-test")]
+[assembly: AssemblyFileVersionAttribute("1.2.3-test")]
