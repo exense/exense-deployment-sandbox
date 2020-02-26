@@ -23,7 +23,6 @@
 		<ItemGroup>
       <Compile Include="Properties\Version.cs" />
 		</ItemGroup>
-    
 	</Target>
   <Target Name="CreateZip">
     <ItemGroup>
