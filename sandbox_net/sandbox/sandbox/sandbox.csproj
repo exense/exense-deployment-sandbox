@@ -1,97 +1,49 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0417BCAF-9B41-457B-9E3C-627C8A257B0B}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>sandbox</RootNamespace>
-    <AssemblyName>sandbox</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PackageId>sandbox</PackageId>
-    <Authors>Exense team</Authors>
-    <Company>Exense</Company>
-    <IsPackable>true</IsPackable>
-    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
-    <DeployOnBuild>true</DeployOnBuild>
-    <DeployTarget>Package</DeployTarget>
-    <PackageAsSingleFile>true</PackageAsSingleFile>
+    <TargetFramework>net46</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <PackageOutputPath>./nupkg</PackageOutputPath>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NuGet.Build.Tasks.Pack" Version="5.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="StepApiFunction" Version="5.6.7-test" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Version.cs" />
-    <Compile Include="Tests.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="NUnit">
-      <Version>3.12.0</Version>
-    </PackageReference>
-    <PackageReference Include="NUnit3TestAdapter">
-      <Version>3.16.0</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="UpdateVersion">
-    <Message Text="Updating AssemblyInfo to Version $(VersionNumber)">
-    </Message>
-    <Message Text="Writing to AssemblyInfo files">
-    </Message>
+    <Message Text="Updating AssemblyInfo to Version $(VersionNumber)"></Message>
+    <Message Text="Writing to AssemblyInfo files"></Message>
     <ItemGroup>
       <AssemblyAttributes Include="AssemblyInformationalVersionAttribute">
+        <_Parameter1>$(VERSION)</_Parameter1>
+      </AssemblyAttributes>
+      <AssemblyAttributes Include="AssemblyFileVersionAttribute">
         <_Parameter1>$(VERSION)</_Parameter1>
       </AssemblyAttributes>
     </ItemGroup>
     <MakeDir Directories="$(IntermediateOutputPath)" />
     <WriteCodeFragment Language="C#" OutputFile="Properties\Version.cs" AssemblyAttributes="@(AssemblyAttributes)" />
-    <ItemGroup>
+		<ItemGroup>
       <Compile Include="Properties\Version.cs" />
+		</ItemGroup>
+    
+	</Target>
+  <Target Name="CreateZip">
+    <ItemGroup>
+      <BinFiles Include="$(OutputPath)\*.*" />
     </ItemGroup>
+    <RemoveDir Directories="zip" />
+    <Delete Files="$(AssemblyName)-$(VERSION).zip" />
+    <MakeDir Directories="zip" />
+    <MakeDir Directories="zip\$(AssemblyName)-$(VERSION)" />
+    <MakeDir Directories="zip\$(AssemblyName)-$(VERSION)\bin" />
+    <MakeDir Directories="zip\$(AssemblyName)-$(VERSION)\conf" />
+    <MakeDir Directories="zip\$(AssemblyName)-$(VERSION)\work" />
+    <MakeDir Directories="zip\$(AssemblyName)-$(VERSION)\log" />
+    <Copy SourceFiles="conf\AgentConf.json" DestinationFolder="zip\$(AssemblyName)-$(VERSION)\conf" />
+    <Copy SourceFiles="@(BinFiles)" DestinationFolder="zip\$(AssemblyName)-$(VERSION)\bin" />
+     <ZipDirectory SourceDirectory="zip\$(AssemblyName)-$(VERSION)" DestinationFile="zip\$(AssemblyName)-$(VERSION).zip" />
   </Target>
-  <Target Name="Publish">
+	<Target Name="Push">
     <CallTarget Targets="CreateZip" />
-    <Exec WorkingDirectory="$(PackageOutputPath)" Command="nuget.exe push &quot;$(AssemblyName).$(VERSION).nupkg&quot; -Source $(NEXUS_URL)" />
-  </Target>
-  <Target Name="Test">
-    <Exec Command="nunit3-console $(OutputPath)\$(PackageId).dll " />
-  </Target>
+    <Exec WorkingDirectory="$(PackageOutputPath)" Command="dotnet nuget push &quot;*.nupkg&quot; -s $(NEXUS_URL)" />
+	</Target>
 </Project>

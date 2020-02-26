@@ -5,55 +5,49 @@
 	"SUBPROJECTS":
 	{
 		"TYPE":
-		["POM", "NPM"],
+		["POM", "NPM", "SLN"],
 		
 		"FOLDER":
-		["sandbox-parent/", "sandbox_nodejs/step-node-agent/"],
+		["sandbox-parent/", "sandbox_nodejs/step-node-agent/", "sandbox_net/sandbox/"],
 		
 		"URL_STAGING":
 		[
 			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/",
-			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/"
-		],
-		"URL_QA":
-		[
-			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/",
-			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/"
+			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/",
+			"https://nexus-enterprise.exense.ch/repository/test-build-nuget/"
 		],
 		"URL_PROD":
 		[
 			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/",
-			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/"
+			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/",
+			"https://nexus-enterprise.exense.ch/repository/test-build-nuget/"
 		],
 		
 		"CONFIG_STAGING":
-		[ "Debug", ""],
-		"CONFIG_QA":
-		[ "Debug", ""],
+		[ "Debug", "", "Debug" ],
 		"CONFIG_PROD":
-		[ "Release", ""],
+		[ "Release", "", "Release" ],
 	},
 	"DISTRIBUTIONS":
 	{
-		"TYPE":
-		[],
+		"TYPE": ["FTP","GITHUB"],
 		
-		"ORIGIN_FILE":
-		[],
-		"DESTINATION_NAME":
-		[],
+		"ORIGIN_FILE": [
+      "sandbox_net/sandbox/sandbox/zip/sandbox-${VERSION}.zip",
+      "sandbox_net/sandbox/sandbox/zip/sandbox-${VERSION}.zip"
+    ],
+		"DESTINATION_NAME": [
+      "sandbox-${VERSION}.zip"
+      "sandbox-new_name-${VERSION}.zip"
+    ],
 		
-		"URL_STAGING":
-		[],
+		"URL_STAGING":  ["build@ftps.exense.ch","NONE"],
+		"URL_PROD":     [
+      "build@ftps.exense.ch",
+      "https://uploads.github.com/repos/exense/djigger/releases/v${VERSION}/assets?name=${DESTINATION_NAME}"
+    ],
 		
-		"URL_QA":
-		[],
-		
-		"URL_PROD":
-		[],
-		
-		"OS":[],
-		
-		"CONFIG":[]
+		"OS":["NOT_USED","NOT_USED"],
+		"CONFIG":["public","NOT_USED"]
 	}
 }
