@@ -37,7 +37,7 @@
       "sandbox_net/sandbox/sandbox/zip/sandbox-${VERSION}.zip"
     ],
 		"DESTINATION_NAME": [
-      "sandbox-${VERSION}.zip"
+      "sandbox-${VERSION}.zip",
       "sandbox-new_name-${VERSION}.zip"
     ],
 		
