@@ -30,7 +30,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "http": "0.0.0",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.2",
     "npm": "^6.13.4",
     "request": "^2.85.0",
     "shelljs": "^0.8.1",
