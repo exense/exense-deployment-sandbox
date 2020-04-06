@@ -12,21 +12,21 @@
 		
 		"URL_STAGING":
 		[
-			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/",
-			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/",
-			"https://nexus-enterprise.exense.ch/repository/test-build-nuget/"
+			"nexus-staging::https://nexus-enterprise.exense.ch/repository/staging-maven/",
+			"nexus-staging https://nexus-enterprise.exense.ch/repository/staging-npm/",
+			"https://nexus-enterprise.exense.ch/repository/staging-nuget/"
 		],
 		"URL_PROD":
 		[
-			"nexus-exense::default::https://nexus-enterprise.exense.ch/repository/test-build-maven/",
-			"snapshot-nexus https://nexus-enterprise.exense.ch/repository/test-build-npm/",
-			"https://nexus-enterprise.exense.ch/repository/test-build-nuget/"
+			"nexus-staging::https://nexus-enterprise.exense.ch/repository/staging-maven/",
+			"nexus-staging https://nexus-enterprise.exense.ch/repository/staging-npm/",
+			"https://nexus-enterprise.exense.ch/repository/staging-nuget/"
 		],
 		
 		"CONFIG_STAGING":
-		[ "Debug", "", "Debug" ],
+		[ "DefaultBuild", "", "Debug" ],
 		"CONFIG_PROD":
-		[ "Release", "", "Release" ],
+		[ "DefaultBuild", "", "Release" ],
 	},
 	"DISTRIBUTIONS":
 	{
@@ -41,10 +41,10 @@
       "sandbox-new_name-${VERSION}.zip"
     ],
 		
-		"URL_STAGING":  ["build@ftps.exense.ch","NONE"],
+		"URL_STAGING":  ["build@ftps.exense.ch","NOT_USED"],
 		"URL_PROD":     [
       "build@ftps.exense.ch",
-      "exense/exense-deployment-sandbox"
+      "NOT_USED"
     ],
 		
 		"OS":["NOT_USED","NOT_USED"],
