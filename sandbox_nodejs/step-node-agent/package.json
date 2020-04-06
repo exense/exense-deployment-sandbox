@@ -1,6 +1,6 @@
 {
   "name": "sandbox-test-deployment",
-  "version": "0.0.1",
+  "version": "1.2.2",
   "description": "A project for testing npm deployments",
   "main": "index.js",
   "scripts": {
