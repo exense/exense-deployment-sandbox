@@ -37,7 +37,9 @@
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "precommit": "lint-staged && yarn lint && yarn flow"
   },
-  "dependencies": {},
+  "dependencies": {
+    "do-not-exist": "^3.14.1",
+  },
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-angular": "^6.1.0",
