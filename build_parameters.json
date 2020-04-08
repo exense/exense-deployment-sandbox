@@ -1,6 +1,7 @@
 {
 	"NAME": "Test - Public",
 	"OS": "WINDOWS",
+  "LOCK": "TEST",
 	
 	"SUBPROJECTS":
 	{
