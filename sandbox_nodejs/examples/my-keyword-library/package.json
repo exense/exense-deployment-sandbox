@@ -8,10 +8,10 @@
     "precommit": "npm run eslint",
     "test": "node index.js"
   },
-  "author": "JÃ©rÃ´me Comte",
+  "author": "Jérôme Comte",
   "license": "ISC",
   "dependencies": {
-    "npm": "^6.13.6",
+    "npm": "^5.7.1",
     "selenium-webdriver": "^3.6.0",
     "step-node-agent": "^0.9.5"
   },

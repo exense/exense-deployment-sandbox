@@ -1,7 +1,7 @@
 {
-  "name": "sandbox-test-deployment",
-  "version": "0.0.1",
-  "description": "A project for testing npm deployments",
+  "name": "step-node-agent",
+  "version": "0.0.0",
+  "description": "The official STEP Agent implementation for Node.js",
   "main": "index.js",
   "scripts": {
     "debug": "node --inspect-brk server.js",
@@ -10,11 +10,11 @@
     "start": "node server.js",
     "test": "node test/test.js"
   },
-  "author": "",
+  "author": "Jerome Comte",
   "license": "AGPL-3.0",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/exenseteam/exense-private-deployment-sandbox.git"
+    "url": "git@github.com:exense/step.git"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
@@ -27,11 +27,12 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "do-not-exist": "^3.14.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "http": "0.0.0",
-    "minimist": "^1.2.0",
-    "npm": "^6.13.4",
+    "minimist": "^1.2.5",
+    "npm": "^6.14.4",
     "request": "^2.85.0",
     "shelljs": "^0.8.1",
     "underscore": "^1.8.3",
@@ -51,6 +52,6 @@
     "uuid"
   ],
   "bin": {
-    "sandbox-test-deployment": "./bin/step-node-agent"
+    "step-node-agent": "./bin/step-node-agent"
   }
 }
